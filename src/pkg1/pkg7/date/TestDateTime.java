@@ -51,5 +51,13 @@ public class TestDateTime {
         abstractTime.setTime(24, 60, 32);
         System.out.println(abstractTime);
         
+        
+        DateTime todayNow = new DateTime(12,5,2018,10,54,20);
+        System.out.println(todayNow);
+        
+        Date d = todayNow.getDate();
+        System.out.println(d.getDay());
+        todayNow.setTime(11,02,50);
+        System.out.println(todayNow);
     }
 }
