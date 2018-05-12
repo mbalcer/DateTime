@@ -21,21 +21,6 @@ public class Date {
         
         validateDate(this.day,this.month,this.year);
     }
-    private void validateDate(int day,int month, int year) {
-        if(year<1900 || year>2100)
-            this.year = 1970;
-        if(month>12 || month < 1)
-            this.month = 1;
-        if(day>31||day<1)
-            this.day = 1;
-        if(year%4==0 && month==2 && day>29)
-            this.day = 1;
-        if(year%4!=0 && month==2 && day>28)
-            this.day = 1;
-        if(month==2 || month==4 || month==6 || month==9 || month==11)
-            if(day>30||day<1)
-                this.day = 1;
-    }
     
     public int getDay() {
         return this.day; 
@@ -73,4 +58,20 @@ public class Date {
     public Date previousDay() {
         return new Date(day-1,month,year);
     }  
+    private void validateDate(int day,int month, int year) {
+        if(year<1900 || year>2100)
+            this.year = 1970;
+        if(month>12 || month < 1)
+            this.month = 1;
+        if(day>31||day<1)
+            this.day = 1;
+        if(year%4==0 && month==2 && day>29)
+            this.day = 1;
+        if(year%4!=0 && month==2 && day>28)
+            this.day = 1;
+        if(month==2 || month==4 || month==6 || month==9 || month==11)
+            if(day>30||day<1)
+                this.day = 1;
+    }
+
 }
